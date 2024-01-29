@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteca</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='library-styles.css') }}">
+
+</head>
+<body>
+    <h1>Biblioteca</h1>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Título</th>
+            <th>Autor</th>
+            <th>Status</th>
+            <th>Ação</th>
+        </tr>
+        {% for livro in livros %}
+            <tr>
+                <td>{{ livro.id }}</td>
+                <td>{{ livro.titulo }}</td>
+                <td>{{ livro.autor }}</td>
+                <td>{{ 'Disponível' if not livro.emprestado else 'Emprestado' }}</td>
+                <td>
+                    {% if not livro.emprestado %}
+                        <button class="disponivel" onclick="location.href='/emprestar/{{ livro.id }}'">Emprestar</button>
+                    {% else %}
+                        <button class="emprestado" onclick="location.href='/devolver/{{ livro.id }}'">Devolver</button>
+                    {% endif %}
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

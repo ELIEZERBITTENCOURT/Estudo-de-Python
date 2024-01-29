@@ -1,0 +1,28 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 20px;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+th, td {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+th {
+    background-color: #f2f2f2;
+}
+button {
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.disponivel {
+    background-color: #4CAF50; /* Verde */
+}
+.emprestado {
+    background-color: #FF6347; /* Vermelho */
+}
