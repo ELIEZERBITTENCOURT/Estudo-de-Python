@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='post-style.css') }}">
+    <title>Novo Post</title>
+</head>
+<body>
+    <div class="container">
+    <h1>Novo Post</h1>
+    <form action="/post" method="post">
+        <input type="text" name="autor" placeholder="Autor" required><br>
+        <input type="text" name="titulo" placeholder="Título" required><br>
+        <textarea name="conteudo" placeholder="Conteúdo" required></textarea><br>
+        <input type="submit" value="Publicar">
+    </form>
+    </div>
+</body>
+</html>
